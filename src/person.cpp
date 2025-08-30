@@ -1,12 +1,23 @@
 #include "person.hpp"
 #include <cstring>
 #include <iostream>
-// #include <iterator>
 #include <ostream>
 
 using namespace std;
 person::person() {}
 
+// Getters
+char *person::getName() const { return _name; }
+char *person::getSurname() const { return _surname; }
+char *person::getManager() const { return _manager; }
+bool person::getContract() const { return _contract; }
+
+// Setters
+void person::setName(char *name) { _name = name; }
+void person::setSurname(char *surname) { _surname = surname; }
+void person::setManager(char *manager) { _manager = manager; }
+void person::setContract() { _contract = true; }
+void person::removeContract() { _contract = false; }
 person::person(const char *name, const char *surname) {
     _name = new char[strlen(name)];
     _surname = new char[strlen(surname)];
@@ -49,10 +60,4 @@ person::~person() {
         delete[] _manager;
 }
 
-int main() {
-    person person1("mathis", "pereira", "fabien", false);
-    person person2("mathis", "pereira", "fabien", true);
-    person1.debug();
-    person2.debug();
-    return 0;
-}
+int main() { return 0; }
