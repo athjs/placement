@@ -21,6 +21,7 @@ class person {
     void setContract();
     void removeContract();
 
+    // Constructors
     person();
     person(const char *name, const char *surname);
     person(const char *name, const char *surname, const char *manager);

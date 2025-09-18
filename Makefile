@@ -11,9 +11,9 @@ all : build
 
 .PHONY : all
 
-build : person.o
+build : person.o place.o
 
-#NOTE:Here is taken only the first file because there is no link edition made betwteen files. 
+#NOTE: Here is taken only the first file because there is no link edition made between files. 
 %.o : $(SRC)/%.cpp
 	$(CXX) $< $(CXXFLAGS) $(DEBUG) -c
 	@mv $@ $(OBJ) # @ hides the line 
